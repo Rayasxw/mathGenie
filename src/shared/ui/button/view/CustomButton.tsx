@@ -16,7 +16,9 @@ export const CustomButton: FC<ButtonProps> = ({
     styles[size],
     className,
     fullWidth && styles.fullWidth,
-  ];
+  ]
+    .filter(Boolean)
+    .join(' ');
   return (
     <button className={classes} {...rest}>
       {children}
