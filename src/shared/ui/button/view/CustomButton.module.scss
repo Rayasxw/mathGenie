@@ -1,0 +1,66 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border 0.2s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 16px 20px;
+}
+
+.primary {
+  background: $primary-gradient;
+  color: $white;
+
+  &:hover {
+    background: $hover-gradient;
+  }
+}
+
+.secondary {
+  background: $white;
+  color: $black;
+  border: 1.5px solid $primary;
+
+  &:hover {
+    background: $white-hover;
+  }
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 2px $accent-color;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.sm {
+  font-size: 14rem;
+  padding: 12rem 16rem;
+}
+
+.lg {
+  font-size: 18rem;
+  padding: 20rem 24rem;
+}
+
+.icon {
+  padding: 0;
+  width: 40rem;
+  height: 40rem;
+  justify-content: center;
+}
