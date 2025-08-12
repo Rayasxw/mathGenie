@@ -1,0 +1,88 @@
+.wrapper {
+}
+
+.label {
+  font-size: 13px;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid $border-color;
+  outline: none;
+  font-size: 14px;
+  transition:
+    box-shadow 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.withStartIcon {
+  padding-left: 48px;
+}
+.withEndIcon {
+  padding-right: 48px;
+}
+
+.iconStart,
+.iconEnd {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.iconStart {
+  left: 10px;
+}
+.iconEnd {
+  right: 10px;
+}
+
+.helperText {
+  text-align: right;
+  margin-top: 6px;
+  margin-right: 5px;
+  color: #5c5b5b;
+}
+
+.errorText {
+  margin-top: 6px;
+  color: #e53935;
+}
+
+/* Variants */
+.outline .input {
+  background: #fff;
+}
+.filled .input {
+  background: #f6f7fb;
+  border-color: transparent;
+}
+
+/* States */
+.root:focus-within .input {
+  box-shadow: 0 0 0 4px rgba(16, 144, 255, 0.06);
+  border-color: #4098ff;
+}
+.disabled .input {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.error .input {
+  border-color: #e53935;
+}
+
+.fullWidth {
+  width: 100%;
+}
