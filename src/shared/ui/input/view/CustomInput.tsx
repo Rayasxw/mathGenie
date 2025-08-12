@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import styles from './CustomInput.module.scss';
 import classNames from 'classnames';
 import { InputProps } from '../types/types';
+import { Typography } from '../../typography/view/Typography';
 
 export const CustomInput = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -40,7 +41,13 @@ export const CustomInput = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div className={wrapperClasses}>
-        {label && <label className={styles.label}>{label}</label>}
+        {label && (
+          <label className={styles.label}>
+            <Typography variant="bodyText" weight="semiBold">
+              {label}
+            </Typography>
+          </label>
+        )}
         <div className={styles.inputWrap}>
           {startIcon && <span className={styles.iconStart}>{startIcon}</span>}
 
@@ -57,11 +64,15 @@ export const CustomInput = forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {error ? (
-          <p className={styles.errorText}>
+          <Typography variant="smallText" className={styles.errorText}>
             {typeof error === 'string' ? error : 'Ошибка'}
-          </p>
+          </Typography>
         ) : (
-          helperText && <p className={styles.helperText}>{helperText}</p>
+          helperText && (
+            <Typography variant="smallText" className={styles.helperText}>
+              {helperText}
+            </Typography>
+          )
         )}
       </div>
     );

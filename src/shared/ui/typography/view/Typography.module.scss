@@ -49,16 +49,18 @@
 
 // colors
 .black {
-  color: black;
+  color: $black;
 }
 .white {
   color: white;
 }
 .grey {
-  color: $grey400;
+  color: $grey;
 }
 .gradient {
-  color: #a3a3a3;
+  background: $primary-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .primary {
   color: $primary;

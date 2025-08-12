@@ -1,6 +1,7 @@
 import styles from './CustomButton.module.scss';
 import { FC } from 'react';
 import { ButtonProps } from '../types/types';
+import { Typography } from '../../typography/view/Typography';
 
 export const CustomButton: FC<ButtonProps> = ({
   variant = 'primary',
@@ -23,7 +24,7 @@ export const CustomButton: FC<ButtonProps> = ({
     .join(' ');
   return (
     <button className={classes} {...rest}>
-      {children}
+      <Typography variant="bodyText">{children}</Typography>
     </button>
   );
 };
