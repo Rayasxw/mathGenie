@@ -1,5 +1,4 @@
-import type { FC } from "react";
-
+import type { FC } from 'react';
 
 export const HomePage: FC = () => {
   return (
@@ -9,4 +8,3 @@ export const HomePage: FC = () => {
     </div>
   );
 };
-

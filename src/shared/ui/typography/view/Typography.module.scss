@@ -1,0 +1,91 @@
+.h1 {
+  font-size: 40px;
+  line-height: 56px;
+  font-weight: 600;
+}
+.h2 {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.h3 {
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 400;
+}
+
+.h4 {
+  font-size: 18px;
+  line-height: 100%;
+  font-weight: 400;
+}
+
+.bodyText {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.smallText {
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 400;
+}
+
+// weights
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+.semiBold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
+
+// colors
+.black {
+  color: black;
+}
+.white {
+  color: white;
+}
+.grey {
+  color: $grey400;
+}
+.gradient {
+  color: #a3a3a3;
+}
+.primary {
+  color: $primary;
+}
+.secondary {
+  color: $secondary;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+// transform
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}

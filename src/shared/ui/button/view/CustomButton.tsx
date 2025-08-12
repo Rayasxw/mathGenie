@@ -1,4 +1,4 @@
-import styles from 'CustomButton.module.scss';
+import styles from './CustomButton.module.scss';
 import { FC } from 'react';
 import { ButtonProps } from '../types/types';
 
@@ -6,6 +6,7 @@ export const CustomButton: FC<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
   className,
+  rounded = false,
   children,
   fullWidth = false,
   ...rest
@@ -16,6 +17,7 @@ export const CustomButton: FC<ButtonProps> = ({
     styles[size],
     className,
     fullWidth && styles.fullWidth,
+    rounded && styles.rounded,
   ]
     .filter(Boolean)
     .join(' ');

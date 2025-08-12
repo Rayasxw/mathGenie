@@ -4,16 +4,13 @@ $tertiary: #dbeafe;
 $quaternary: #f3e8ff;
 $hover: #1352f1;
 
+$border-color: #c6d4e7;
 $white: #eef2ff;
-$white-hover: #e0e5f0;
+$white-hover: #e3e8f7;
 
-$primary-gradient: linear-gradient(
-  180deg,
-  rgba(41, 97, 235, 1) 0%,
-  rgba(142, 53, 234, 1) 100%
-);
+$primary-gradient: linear-gradient(90deg, #2961eb 0%, #8e35ea 100%);
 $hover-gradient: linear-gradient(
-  180deg,
+  90deg,
   rgba(12, 76, 237, 1) 0%,
   rgba(126, 12, 240, 1) 100%
 );
