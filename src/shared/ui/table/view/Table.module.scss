@@ -1,0 +1,39 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  .head {
+    height: 45px;
+    background: $primary-gradient;
+    border-radius: 8px;
+
+    th {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+
+  .body {
+    .row {
+      height: 43px;
+      padding-left: 8px;
+      transition: 0.3s;
+
+      &:nth-child(even) {
+        background-color: $tertiary;
+      }
+      &:nth-child(odd) {
+        background-color: $white;
+      }
+
+      &:hover {
+        background-color: #fff;
+      }
+
+      td {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+  }
+}
