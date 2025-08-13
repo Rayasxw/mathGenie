@@ -1,0 +1,24 @@
+.card {
+  min-width: 360px;
+  width: 360px;
+  height: 200px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: olive;
+}
+.content {
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+}
+.status {
+  height: 10px;
+  width: 100%;
+}
