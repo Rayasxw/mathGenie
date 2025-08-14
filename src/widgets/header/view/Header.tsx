@@ -7,7 +7,10 @@ export const Header: FC = () => {
     <header className={styles.header}>
       <div className={styles.logo}></div>
       <div className={styles.groups}>
-        <Typography variant="bodyText">Geeks 44-1F30092024</Typography>
+        <Typography variant="h4" weight="medium">
+          Geeks 44-1F30092024
+        </Typography>
+        <div className={styles.arrow}></div>
       </div>
       <div className={styles.profile}>
         <div className={styles.notifications}></div>

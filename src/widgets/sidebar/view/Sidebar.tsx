@@ -12,8 +12,8 @@ export const icons = [
   },
   {
     icon: <Component />,
-    label: 'groups',
-    path: paths.teacher.groups,
+    label: 'lessons',
+    path: paths.teacher.lessons,
   },
   {
     icon: <UserRound />,

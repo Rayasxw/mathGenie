@@ -9,13 +9,14 @@ export const paths = {
   months: '/months',
   tests: '/tests',
   test: '/test/:id',
-  timesheet: '/timesheet',
+  tabel: '/tabel',
 
   teacher: {
-    groups: '/teacher/groups',
-    group: '/teacher/group/:id',
-    attendance: '/teacher/attendance/:groupId',
-    lesson: '/teacher/lesson/:groupId',
-    homeworkCheck: '/teacher/homework-check/:homeworkId',
+    lessons: '/teacher/lessons',
+    lesson: '/teacher/lessons/:id',
+    homeworks: '/teacher/homeworks/:groupId',
+    homework: '/teacher/homeworks/:groupId',
+    tests: '/teacher/tests',
+    test: '/teacher/tests/:testId',
   },
 };

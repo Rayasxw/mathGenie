@@ -1,35 +1,16 @@
-import {
-  TeacherAttendancePage,
-  TeacherGroupPage,
-  TeacherGroupsPage,
-  TeacherHomeworkCheckPage,
-  TeacherLessonPage,
-} from '@src/pages';
+import { TeacherLessonPage } from '@src/pages';
 import { TeacherGuard } from './guards/TeacherGuard';
 import { paths } from '@src/shared/constants/constants';
+import { TeacherLessons } from '@src/pages/teacher/teacherLessons/view/TeacherLessons';
+import { TeacherHomeworksPage } from '@src/pages/teacher/homeworks/view/TeacherHomeworksPage';
+import { TeacherHomeworkPage } from '@src/pages/teacher/homework/view/TeacherHomeworkPage';
 
 export const teacherRouter = [
   {
-    path: paths.teacher.groups,
+    path: paths.teacher.lessons,
     element: (
       <TeacherGuard>
-        <TeacherGroupsPage />
-      </TeacherGuard>
-    ),
-  },
-  {
-    path: paths.teacher.group,
-    element: (
-      <TeacherGuard>
-        <TeacherGroupPage />
-      </TeacherGuard>
-    ),
-  },
-  {
-    path: paths.teacher.attendance,
-    element: (
-      <TeacherGuard>
-        <TeacherAttendancePage />
+        <TeacherLessons />
       </TeacherGuard>
     ),
   },
@@ -42,10 +23,18 @@ export const teacherRouter = [
     ),
   },
   {
-    path: paths.teacher.homeworkCheck,
+    path: paths.teacher.homeworks,
     element: (
       <TeacherGuard>
-        <TeacherHomeworkCheckPage />
+        <TeacherHomeworksPage />
+      </TeacherGuard>
+    ),
+  },
+  {
+    path: paths.teacher.homework,
+    element: (
+      <TeacherGuard>
+        <TeacherHomeworkPage />
       </TeacherGuard>
     ),
   },
