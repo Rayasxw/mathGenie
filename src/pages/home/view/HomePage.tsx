@@ -1,9 +1,12 @@
+import { Hero } from '@src/widgets/hero';
+import { Interactive } from '@src/widgets/interactive';
 import type { FC } from 'react';
 
 export const HomePage: FC = () => {
   return (
-    <div>
-      <h1>Главная страница</h1>
-    </div>
+    <>
+      <Hero />
+      <Interactive />
+    </>
   );
 };

@@ -1,0 +1,33 @@
+.interactiveSection {
+  padding: 50px;
+}
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.left {
+  width: 55%;
+}
+.right {
+  width: 45%;
+  text-align: center;
+  background: linear-gradient(to bottom right, #dbeafe, #e9d5ff);
+  border-radius: 16px;
+  padding: 18px 24px;
+}
+.description {
+  margin: 18px 0 20px;
+}
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+}
+.iconBook {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+.bookTitle {
+  margin-bottom: 8px;
+}

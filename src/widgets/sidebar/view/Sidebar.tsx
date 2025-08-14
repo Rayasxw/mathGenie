@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import styles from './Sidebar.module.scss';
-import { Component, House, UserRound } from 'lucide-react';
+import { Book, BookOpenCheck, Component, House, UserRound } from 'lucide-react';
 import { paths } from '@src/shared/constants/constants';
 import { CustomButton } from '@src/shared/ui';
+import { Link } from 'react-router-dom';
 
 export const icons = [
   {
@@ -12,8 +13,18 @@ export const icons = [
   },
   {
     icon: <Component />,
-    label: 'groups',
-    path: paths.teacher.groups,
+    label: 'lessons',
+    path: paths.teacher.lessons,
+  },
+  {
+    icon: <Book />,
+    label: 'homeworks',
+    path: paths.teacher.homeworks,
+  },
+  {
+    icon: <BookOpenCheck />,
+    label: 'tests',
+    path: paths.teacher.tests,
   },
   {
     icon: <UserRound />,
@@ -27,9 +38,11 @@ export const Sidebar: FC = () => {
     <div className={styles.sidebar}>
       <div className={styles.icons}>
         {icons.map((icon) => (
-          <CustomButton variant="tertiary" size="sm" className={styles.icon}>
-            {icon.icon}
-          </CustomButton>
+          <Link to={icon.path}>
+            <CustomButton variant="tertiary" size="sm" className={styles.icon}>
+              {icon.icon}
+            </CustomButton>
+          </Link>
         ))}
       </div>
     </div>
