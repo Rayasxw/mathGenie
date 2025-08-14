@@ -1,0 +1,51 @@
+.header {
+  background-color: #fff;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-left: 150px;
+  padding-right: 80px;
+
+  .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: $primary;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .notifications {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $secondary;
+      cursor: pointer;
+    }
+
+    .avatar {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $grey;
+      }
+    }
+  }
+}
