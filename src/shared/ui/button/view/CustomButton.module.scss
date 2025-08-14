@@ -1,0 +1,60 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  height: 40px;
+}
+
+.primary {
+  background: $primary-gradient;
+  color: $white;
+  transition: 0.2s;
+
+  &:hover {
+    background: $hover-gradient;
+  }
+}
+
+.secondary {
+  background: $white;
+  color: black;
+  border: 1.5px solid $border-color;
+
+  &:hover {
+    background: $white-hover;
+  }
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.sm {
+  text-transform: uppercase;
+  padding: 7px 25px;
+}
+
+.lg {
+  padding: 8px 32px;
+}
+
+.rounded {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.fullWidth {
+  width: 100%;
+}
