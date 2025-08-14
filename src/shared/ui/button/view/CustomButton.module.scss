@@ -31,6 +31,16 @@
   }
 }
 
+.tertiary {
+  background: none;
+  color: black;
+  border: none;
+
+  &:hover {
+    background: $white;
+  }
+}
+
 .button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
