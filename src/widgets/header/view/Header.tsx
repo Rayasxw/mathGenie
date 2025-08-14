@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 import styles from './Header.module.scss';
 import { Typography } from '@src/shared/ui';
+import { useAuthStore } from '@src/widgets/login/store/useAuthStore';
 
 export const Header: FC = () => {
+  const { user, logout } = useAuthStore();
   return (
     <header className={styles.header}>
       <div className={styles.logo}></div>
@@ -16,8 +18,8 @@ export const Header: FC = () => {
         <div className={styles.notifications}></div>
         <div className={styles.avatar}>
           <div className={styles.img}></div>
-          <Typography variant="bodyText">Ишенбек Айназик</Typography>
-          <button>dd</button>
+          <Typography variant="bodyText">{user?.username}</Typography>
+          <button onClick={logout}>Выйти</button>
         </div>
       </div>
     </header>

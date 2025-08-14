@@ -20,3 +20,6 @@ export const paths = {
     test: '/teacher/tests/:testId',
   },
 };
+
+export const BASE_URL = import.meta.env.BASE_URL;
+export const tokens = { access: 'access_token', refresh: 'refresh_token' };

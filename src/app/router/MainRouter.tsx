@@ -4,18 +4,18 @@ import { paths } from '@src/shared/constants/constants';
 
 export const mainRouter = [
   {
-    path: paths.profile,
+    index: true, // Делает HomePage страницей по умолчанию для "/"
     element: (
       <AuthGuard>
-        <ProfilePage />,
+        <HomePage />
       </AuthGuard>
     ),
   },
   {
-    path: paths.home,
+    path: paths.profile,
     element: (
       <AuthGuard>
-        <HomePage />,
+        <ProfilePage />
       </AuthGuard>
     ),
   },
