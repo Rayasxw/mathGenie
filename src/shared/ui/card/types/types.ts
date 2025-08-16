@@ -1,11 +1,12 @@
-import { ReactNode } from 'react';
-
 export interface CardProps {
+  type: 'month' | 'lesson' | 'homework';
   title: string;
-  description?: string;
-  date: ReactNode;
-  className?: string;
-  onClick?: () => void;
+  startDate?: string;
+  endDate?: string;
   teacher?: string;
-  status?: 'in-progress' | 'completed' | 'error';
+  status?: 'Проверено' | 'На исправление' | 'Отправлено' | 'Просрочен';
+  description?: string[];
+  lessonDate?: string;
+  deadline?: string;
+  onClick?: () => void;
 }
