@@ -54,9 +54,11 @@ export const Homeworks: FC = () => {
           {homeworks.map((hw) => (
             <Link to={paths.teacher.homework}>
               <Card
+                type="homework"
                 title={hw.lesson}
                 description={hw.topic}
-                date={<div>{hw.date}</div>}
+                lessonDate={hw.date}
+                deadline={hw.deadline}
               />
             </Link>
           ))}

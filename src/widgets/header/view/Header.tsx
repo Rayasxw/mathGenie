@@ -1,10 +1,12 @@
 import type { FC } from 'react';
 import styles from './Header.module.scss';
 import { Typography } from '@src/shared/ui';
-import { useAuthStore } from '@src/widgets/login/store/useAuthStore';
+import { useAuth } from '@src/shared/hooks/useAuth';
 
 export const Header: FC = () => {
-  const { user, logout } = useAuthStore();
+  const { user, logout } = useAuth();
+  console.log(user);
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}></div>

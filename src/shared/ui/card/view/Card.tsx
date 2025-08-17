@@ -42,7 +42,9 @@ export const Card: FC<CardProps> = ({
         ) : (
           <div className={styles.textL}>
             <Typography variant="bodyText">
-              {description.slice(0, 3).join(', ')}
+              {Array.isArray(description)
+                ? Array(description.slice(0, 3).join(', '))
+                : description}
               {description.length > 3 && ' ...'}
             </Typography>
             <div className={styles.text}>

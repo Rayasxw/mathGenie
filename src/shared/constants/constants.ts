@@ -24,5 +24,5 @@ export const paths = {
   },
 };
 
-export const BASE_URL = import.meta.env.BASE_URL;
+export const BASE_URL = import.meta.env.VITE_API_URL;
 export const tokens = { access: 'access_token', refresh: 'refresh_token' };

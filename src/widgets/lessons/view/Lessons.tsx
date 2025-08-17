@@ -56,9 +56,10 @@ export const Lessons: FC = () => {
           {lessons.map((lesson) => (
             <Link to={`${paths.teacher.lesson}`}>
               <Card
+                type="lesson"
                 title={lesson.lesson}
                 description={lesson.topic}
-                date={<div></div>}
+                lessonDate={lesson.date}
               />
             </Link>
           ))}
