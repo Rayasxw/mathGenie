@@ -8,28 +8,25 @@ import { Form } from '@src/shared/ui/form/view/Form';
 import { FC } from 'react';
 import styles from './Login.module.scss';
 import { useForm } from 'react-hook-form';
-import { AuthState, LoginProps } from '../types/types';
-import { useAuthStore } from '../store/useAuthStore';
+import { useLogin } from '@src/entities/auth/Login';
 import { useNavigate } from 'react-router-dom';
 import { paths } from '@src/shared/constants/constants';
 
+interface LoginForm {
+  username: string;
+  password: string;
+}
 export const Login: FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginProps>();
-  const login = useAuthStore((state: AuthState) => state.login);
+  } = useForm<LoginForm>();
   const navigate = useNavigate();
+  const loginMutation = useLogin(() => navigate(paths.home, { replace: true }));
 
-  const onSubmit = async (data: { username: string; password: string }) => {
-    try {
-      await login(data);
-      console.log('Вход выполнен!');
-      navigate(paths.home, { replace: true });
-    } catch (err) {
-      console.error('Ошибка входа:', err);
-    }
+  const onSubmit = (data: LoginForm) => {
+    loginMutation.mutate(data);
   };
 
   return (
@@ -74,6 +71,17 @@ export const Login: FC = () => {
               {...register('password', { required: 'Пароль обязателен' })}
               error={errors.password?.message}
             />
+            {loginMutation.isError && (
+              <Typography
+                variant="bodyText"
+                align="center"
+                style={{ color: 'red' }}
+              >
+                Ошибка входа:{' '}
+                {loginMutation.error?.response?.data?.message ||
+                  'Не удалось войти'}
+              </Typography>
+            )}
             <CustomButton>Войти</CustomButton>
           </Form>
         </div>

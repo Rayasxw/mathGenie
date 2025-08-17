@@ -5,7 +5,7 @@ export interface CardProps {
   endDate?: string;
   teacher?: string;
   status?: 'Проверено' | 'На исправление' | 'Отправлено' | 'Просрочен';
-  description?: string[];
+  description?: string[] | string;
   lessonDate?: string;
   deadline?: string;
   onClick?: () => void;

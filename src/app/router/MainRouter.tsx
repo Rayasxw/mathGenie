@@ -4,7 +4,7 @@ import { paths } from '@src/shared/constants/constants';
 
 export const mainRouter = [
   {
-    index: true, // Делает HomePage страницей по умолчанию для "/"
+    index: true,
     element: (
       <AuthGuard>
         <HomePage />
