@@ -55,6 +55,7 @@ export const Homeworks: FC = () => {
             <Link to={paths.teacher.homework}>
               <Card
                 type="homework"
+                status="Проверено"
                 title={hw.lesson}
                 description={hw.topic}
                 lessonDate={hw.date}
