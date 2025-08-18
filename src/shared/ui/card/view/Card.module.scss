@@ -12,7 +12,7 @@
     transform: scale(1.02);
     .status {
       height: 30px;
-      opacity: 0.8;
+      opacity: 1;
     }
     .statusText {
       opacity: 1;
@@ -72,10 +72,10 @@
   background-color: $white;
 }
 .lesson {
-  background-color: yellow;
+  background: #f9c507;
 }
 .homework {
-  background-color: $primary;
+  background-color: #f1a713;
 }
 .textM {
   display: flex;

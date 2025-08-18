@@ -1,5 +1,5 @@
-$primary: #2961eb;
-$secondary: #9034ea;
+$primary: #ebc129;
+$secondary: #ea8635;
 $tertiary: #dbeafe;
 $quaternary: #f3e8ff;
 $hover: #1352f1;
@@ -14,9 +14,5 @@ $black: #000;
 
 $error-color: #e53935;
 
-$primary-gradient: linear-gradient(90deg, #2961eb 0%, #8e35ea 100%);
-$hover-gradient: linear-gradient(
-  90deg,
-  rgba(12, 76, 237, 1) 0%,
-  rgba(126, 12, 240, 1) 100%
-);
+$primary-gradient: linear-gradient(90deg, #ebc129 0%, #ea8635 100%);
+$hover-gradient: linear-gradient(90deg, #cca721 0%, #cb742d 100%);
