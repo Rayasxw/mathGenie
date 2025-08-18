@@ -12,6 +12,8 @@ export const paths = {
   tests: '/tests',
   test: '/test/:id',
   timesheet: '/timesheet',
+  lessons: '/lessons',
+  lesson: '/lessons/:id',
 
   teacher: {
     lessons: '/teacher/lessons',

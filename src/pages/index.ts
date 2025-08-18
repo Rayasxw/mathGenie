@@ -9,6 +9,8 @@ export { SchedulePage } from './schedule/view/SchedulePage';
 export { SyllabusPage } from './syllabus/view/SyllabusPage';
 export { MonthsPage } from './months/view/MonthsPage';
 export { TimesheetPage } from './timesheet/view/TimesheetPage';
+export { LessonsPage } from './lessons/view/Lessons';
+export { LessonPage } from './lesson/view/LessonPage';
 
 // Страницы для учителей
 export { TeacherLessonPage } from './teacher/teacherLesson/view/TeacherLessonPage';
