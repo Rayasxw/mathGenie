@@ -24,34 +24,54 @@ interface AuthState {
   checkAuth: (refresh: string) => Promise<loginRes>;
 }
 
-export const useAuth = create<AuthState>((set) => ({
-  isAuth: !!localStorage.getItem(tokens.access),
-  user: null,
-  login: async (response: { data: loginRes }) => {
-    const { access, refresh } = response.data;
-    localStorage.setItem(tokens.access, access);
-    localStorage.setItem(tokens.refresh, refresh);
-    set({ isAuth: true, user: response.data.user });
-  },
-  logout: () => {
-    localStorage.removeItem(tokens.access);
-    localStorage.removeItem(tokens.refresh);
-    set({ isAuth: false, user: null });
-  },
-  checkAuth: async (refresh: string): Promise<loginRes> => {
-    try {
-      const { data } = await axios.post<loginRes>(`${BASE_URL}/auth/refresh/`, {
-        refresh: refresh,
-      });
-      localStorage.setItem(tokens.access, data.access);
-      if (data.refresh) {
-        localStorage.setItem(tokens.refresh, data.refresh);
+export const useAuth = create<AuthState>((set) => {
+  let user: userData | null = null;
+  try {
+    const userStr = localStorage.getItem('user');
+    if (userStr) user = JSON.parse(userStr);
+  } catch (error) {
+    console.error('Error parsing user from localStorage:', error);
+  }
+
+  return {
+    isAuth: !!localStorage.getItem(tokens.access),
+    user,
+    login: async (response: { data: loginRes }) => {
+      const { access, refresh, user } = response.data;
+      localStorage.setItem(tokens.access, access);
+      localStorage.setItem(tokens.refresh, refresh);
+      localStorage.setItem('user', JSON.stringify(user));
+      set({ isAuth: true, user });
+    },
+    logout: () => {
+      localStorage.removeItem(tokens.access);
+      localStorage.removeItem(tokens.refresh);
+      localStorage.removeItem('user');
+      set({ isAuth: false, user: null });
+    },
+    checkAuth: async (refresh: string): Promise<loginRes> => {
+      try {
+        const { data } = await axios.post<loginRes>(
+          `${BASE_URL}/auth/refresh/`,
+          {
+            refresh: refresh,
+          },
+        );
+        localStorage.setItem(tokens.access, data.access);
+        if (data.refresh) {
+          localStorage.setItem(tokens.refresh, data.refresh);
+        }
+        if (data.user) {
+          localStorage.setItem('user', JSON.stringify(data.user));
+          set({ isAuth: true, user: data.user });
+        } else {
+          set({ isAuth: true });
+        }
+        return data;
+      } catch (error) {
+        console.error('Error refreshing token:', error);
+        throw new Error('Failed to refresh token');
       }
-      set({ isAuth: true });
-      return data;
-    } catch (error) {
-      console.error('Error refreshing token:', error);
-      throw new Error('Failed to refresh token');
-    }
-  },
-}));
+    },
+  };
+});

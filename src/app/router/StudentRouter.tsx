@@ -1,5 +1,7 @@
 import {
   HomeworkPage,
+  LessonPage,
+  LessonsPage,
   MonthsPage,
   SchedulePage,
   SyllabusPage,
@@ -64,6 +66,22 @@ export const studentRouter = [
     element: (
       <StudentGuard>
         <TestPage />
+      </StudentGuard>
+    ),
+  },
+  {
+    path: paths.lessons,
+    element: (
+      <StudentGuard>
+        <LessonsPage />
+      </StudentGuard>
+    ),
+  },
+  {
+    path: paths.lesson,
+    element: (
+      <StudentGuard>
+        <LessonPage />
       </StudentGuard>
     ),
   },
